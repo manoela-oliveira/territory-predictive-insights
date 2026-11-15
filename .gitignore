@@ -1,0 +1,25 @@
+# Arquivos compilados do Java
+*.class
+
+# Pastas de build e empacotamento do Maven
+target/
+bin/
+
+# Configurações de IDEs (VS Code, Eclipse, IntelliJ)
+.vscode/
+.idea/
+*.iml
+.metadata/
+.classpath
+.project
+.settings/
+
+# Arquivos de log e temporários do sistema operacional
+*.log
+.DS_Store
+Thumbs.db
+
+# Banco de dados H2 gerado localmente (para não sujar o Git com arquivos binários)
+dados/
+*.mv.db
+*.trace.db
