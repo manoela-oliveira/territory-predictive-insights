@@ -12,10 +12,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-/**
- * Entidade JPA que registra um alerta emitido pelo sistema a partir
- * de previsões que ultrapassaram os limiares de segurança.
- */
+/*
+Entidade JPA que registra um alerta emitido pelo sistema a partir
+de previsões que ultrapassaram os limiares de segurança.
+*/
 @Entity
 @Table(name = "tb_alerta")
 public class Alerta {
@@ -44,7 +44,7 @@ public class Alerta {
     private LocalDateTime dataHora;
 
     public Alerta() {
-        // Construtor padrão exigido pelo JPA
+    // Construtor padrão exigido pelo JPA
     }
 
     public Alerta(String tipoSensor, Double valorPrevisto, Double limiarViolado, NivelAlerta nivel, String justificativa) {

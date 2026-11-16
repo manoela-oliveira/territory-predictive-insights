@@ -1,12 +1,18 @@
 package dominio;
 
-import excecao.DadosInvalidosException;
-import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
-/**
- * Entidade JPA que representa um registro histórico coletado por um sensor.
- */
+import excecao.DadosInvalidosException;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+/*
+Entidade JPA que representa um registro histórico coletado por um sensor.
+*/
 @Entity
 @Table(name = "tb_medicao")
 public class Medicao {
@@ -25,7 +31,7 @@ public class Medicao {
     private LocalDateTime dataHora;
 
     public Medicao() {
-        // Construtor padrão exigido pelo JPA
+    // Construtor padrão exigido pelo JPA
     }
 
     public Medicao(String tipoSensor, Double valor) {
