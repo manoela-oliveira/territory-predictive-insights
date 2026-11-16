@@ -1,4 +1,4 @@
-package src.main.java.dominio;
+package dominio;
 
 import excecao.FonteIndisponivelException;
 import java.util.Random;

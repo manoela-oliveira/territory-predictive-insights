@@ -1,12 +1,13 @@
-package src.main.java.dominio;
+package dominio;
 
-import excecao.FonteIndisponivelException;
 import java.util.Random;
 
-/**
- * Monitor de ocupação das salas de emergência, observação e leitos rápidos
- * expresso em taxa percentual (0 a 100%).
- */
+import excecao.FonteIndisponivelException;
+
+/*
+Monitor de ocupação das salas de emergência, observação e leitos rápidos
+expresso em taxa percentual (0 a 100%).
+*/
 public class SensorOcupacaoSalas implements Sensor {
 
     private final String identificador;

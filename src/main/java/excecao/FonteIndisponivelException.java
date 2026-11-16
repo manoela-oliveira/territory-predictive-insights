@@ -1,4 +1,4 @@
-package src.main.java.excecao;
+package excecao;
 
 public class FonteIndisponivelException extends RuntimeException {
 

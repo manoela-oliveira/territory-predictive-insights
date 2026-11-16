@@ -1,14 +1,13 @@
-package src.main.java.dominio;
-
 package dominio;
 
-import excecao.FonteIndisponivelException;
 import java.util.Random;
 
-/**
- * Sensor/catraca de triagem que monitora a quantidade de pessoas
- * aguardando atendimento na recepção da UBS.
- */
+import excecao.FonteIndisponivelException;
+
+/*
+Sensor/catraca de triagem que monitora a quantidade de pessoas
+aguardando atendimento na recepção da UBS.
+*/
 public class SensorFilaEspera implements Sensor {
 
     private final String identificador;
