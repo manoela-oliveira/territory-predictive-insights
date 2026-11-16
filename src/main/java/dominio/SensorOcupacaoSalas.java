@@ -4,10 +4,8 @@ import java.util.Random;
 
 import excecao.FonteIndisponivelException;
 
-/*
-Monitor de ocupação das salas de emergência, observação e leitos rápidos
-expresso em taxa percentual (0 a 100%).
-*/
+// Monitor de ocupação das salas de emergência, observação e leitos rápidos expresso em taxa percentual (0 a 100%).
+
 public class SensorOcupacaoSalas implements Sensor {
 
     private final String identificador;

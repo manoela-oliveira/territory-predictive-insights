@@ -22,10 +22,7 @@ public abstract class ComponenteTerritorial {
         this.status = (status != null && !status.trim().isEmpty()) ? status : "OPERACIONAL";
     }
 
-    /*
-    Método abstrato obrigatório: cada equipamento público avalia seu estado
-    operacional conforme suas próprias métricas de demanda e capacidade.
-    */
+    // Método abstrato obrigatório: cada equipamento público avalia seu estado operacional conforme suas próprias métricas de demanda e capacidade.
     public abstract String verificarStatus();
 
     public Long getId() {

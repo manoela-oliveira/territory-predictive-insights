@@ -4,10 +4,8 @@ import java.util.Random;
 
 import excecao.FonteIndisponivelException;
 
-/*
-Sensor/catraca de triagem que monitora a quantidade de pessoas
-aguardando atendimento na recepção da UBS.
-*/
+// Sensor/catraca de triagem que monitora a quantidade de pessoas aguardando atendimento na recepção da UBS.
+
 public class SensorFilaEspera implements Sensor {
 
     private final String identificador;

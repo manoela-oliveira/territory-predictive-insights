@@ -10,9 +10,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-/*
-Entidade JPA que representa um registro histórico coletado por um sensor.
-*/
+// Entidade JPA que representa um registro histórico coletado por um sensor.
 @Entity
 @Table(name = "tb_medicao")
 public class Medicao {

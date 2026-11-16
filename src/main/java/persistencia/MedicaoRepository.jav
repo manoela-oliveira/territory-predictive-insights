@@ -6,10 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/*
-Repositório Spring Data JPA para operações de persistência e consulta
-sobre o histórico de medições coletadas.
-*/
+// Repositório Spring Data JPA para operações de persistência e consulta sobre o histórico de medições coletadas.
 @Repository
 public interface MedicaoRepository extends JpaRepository<Medicao, Long> {
 
@@ -20,9 +17,6 @@ public interface MedicaoRepository extends JpaRepository<Medicao, Long> {
     */
     List<Medicao> findByTipoSensorOrderByDataHoraDesc(String tipoSensor);
 
-    /*
-    Conta quantas medições já foram gravadas para um determinado sensor.
-    Importante para checar se temos dados suficientes para previsões confiáveis.
-    */
+    // Conta quantas medições já foram gravadas para um determinado sensor - importante para checar se temos dados suficientes para previsões confiáveis.
     long countByTipoSensor(String tipoSensor);
 }

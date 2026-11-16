@@ -2,10 +2,7 @@ package dominio;
 
 import excecao.DadosInvalidosException;
 
-/*
-Equipamento público de saúde (UBS / UPA / Posto de Atendimento)
-monitorado para controle de filas e sobrecarga de atendimento.
-*/
+// Equipamento público de saúde (UBS / UPA / Posto de Atendimento) monitorado para controle de filas e sobrecarga de atendimento.
 public class UnidadeSaude extends ComponenteTerritorial {
 
     private int capacidadeConsultorios;

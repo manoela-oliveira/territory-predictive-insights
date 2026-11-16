@@ -1,9 +1,6 @@
 package dominio;
 
-/*
-Contrato de comportamento para qualquer dispositivo de telemetria
-conectado à rede de monitoramento da comunidade.
-*/
+// Contrato de comportamento para qualquer dispositivo de telemetria conectado à rede de monitoramento da comunidade.
 public interface Sensor {
 
     /*

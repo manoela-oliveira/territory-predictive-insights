@@ -4,10 +4,7 @@ import java.util.Random;
 
 import excecao.FonteIndisponivelException;
 
-/*
-Sensor/sistema de prontuário eletrônico que mede o tempo médio
-de permanência e consulta por paciente (em minutos).
-*/
+// Sensor/sistema de prontuário eletrônico que mede o tempo médio de permanência e consulta por paciente (em minutos).
 public class SensorTempoAtendimento implements Sensor {
 
     private final String identificador;

@@ -2,10 +2,7 @@ package dominio;
 
 import excecao.DadosInvalidosException;
 
-/*
-Encapsula os parâmetros territoriais, demográficos e os limiares de tolerância
-da região atendida pelo equipamento público.
-*/
+// Encapsula os parâmetros territoriais, demográficos e os limiares de tolerância da região atendida pelo equipamento público.
 public class DadosTerritorio {
 
     private String identificadorRegiao;

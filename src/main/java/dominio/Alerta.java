@@ -12,10 +12,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-/*
-Entidade JPA que registra um alerta emitido pelo sistema a partir
-de previsões que ultrapassaram os limiares de segurança.
-*/
+// Entidade JPA que registra um alerta emitido pelo sistema a partir de previsões que ultrapassaram os limiares de segurança.
 @Entity
 @Table(name = "tb_alerta")
 public class Alerta {

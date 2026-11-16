@@ -1,8 +1,6 @@
 package dominio;
 
-/*
-Níveis de gravidade dos alertas automáticos emitidos pelo sistema.
-*/
+// Níveis de gravidade dos alertas automáticos emitidos pelo sistema.
 public enum NivelAlerta {
     ATENCAO("Nível de Atenção: demanda crescente detectada."),
     ALERTA("Nível de Alerta: proximidade do limite de capacidade operacional."),
