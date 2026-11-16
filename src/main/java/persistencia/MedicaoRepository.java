@@ -1,10 +1,11 @@
 package persistencia;
 
-import dominio.Medicao;
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
+import dominio.Medicao;
 
 // Repositório Spring Data JPA para operações de persistência e consulta sobre o histórico de medições coletadas.
 @Repository
