@@ -59,14 +59,6 @@ Este projeto foi desenvolvido no âmbito da iniciativa **CitizenTech: Territory 
 
      Digite `2` e pressione `Enter`. Quando o sistema solicitar a métrica, digite `1` (Fila de Espera) e dê `Enter`. Em seguida, escolha a estratégia digitando `A` (Média Móvel) e dê `Enter`. O sistema exibirá o valor projetado e avaliará se houve violação de limiar.
 
-   - Auditar os alertas emitidos:
-
-     Digite `4` e pressione `Enter` para listar os alertas que foram gerados e salvos no banco de dados.
-
-   - Consultar o histórico bruto:
-
-     Digite `3` e pressione `Enter`. Quando o console pedir o sensor, digite `FILA_ESPERA` e pressione `Enter` para visualizar todos os registros cronológicos.
-
    - Encerrar a aplicação:
 
      Digite `0` e pressione `Enter`.
@@ -76,7 +68,7 @@ Este projeto foi desenvolvido no âmbito da iniciativa **CitizenTech: Territory 
    - Clique no ícone de **Testing** (frasco de laboratório) na barra lateral esquerda do VS Code.
    - Clique no botão **Play** no topo para rodar todas as classes de teste (MedicaoTest, PrevisaoMediaMovelTest, ServicoMonitoramentoTest).
 
-#### 3. Resolução de Erros Comuns Enfrentados
+#### 3. Resolução de Erros Comuns
 
 * Incompatibilidade de Versão do Java (UnsupportedClassVersionError):
   * Causa: Tentar compilar ou rodar o projeto com uma versão legada do JDK (ex: Java 8 ou Java 11), enquanto o projeto exige Java 17.
@@ -178,52 +170,39 @@ territory-predictive-insights/
 ### Demonstração de Execução
 
 #### Menu Principal Interativo
+```text
++==================================================================+
+|  TERRITORY PREDICTIVE INSIGHTS - CitizenTech (Saude Publica)     |
+|  Equipamento: UBS Jardim Esperanca - Dr. Paulo Freire            |
+|  Regiao:      Setor Leste - Periferia Urbana                     |
++==================================================================+
 
-Text
-
+======================== MENU DE OPERACOES ========================
+  1. Coletar Novas Leituras    (Lê os sensores e salva no histórico)
+  2. Gerar Previsao de Risco   (Calcula tendencia e emite alertas)
+  3. Ver Historico de Leituras (Consulta dados brutos de um sensor)
+  4. Consultar Alertas Ativos  (Lista alertas gerados pelas previsoes)
+  5. Ajustar Limiares da UBS   (Configura limites de fila, tempo e vagas)
+  6. Diagnostico Operacional   (Exibe capacidade da equipe e salas)
+  0. Sair do Sistema
+====================================================================
 ```
-==================================================================
-  TERRITORY PREDICTIVE INSIGHTS - CitizenTech (Saude Publica)     
-  Equipamento: UBS Jardim Esperanca - Dr. Paulo Freire
-  Regiao: Setor Leste - Periferia Urbana
-==================================================================
 
--------------------- MENU PRINCIPAL --------------------
-1. Coletar leituras dos Sensores (Telemetria)
-2. Rodar Previsoes Preditivas e Analise de Risco
-3. Consultar Historico de Medicoes por Sensor
-4. Consultar Alertas ja Emitidos (Auditoria)
-5. Gerenciar Limiares de Alerta do Territorio
-6. Exibir Status Geral da Unidade de Saude
-0. Sair
---------------------------------------------------------
-```
 
 #### Coleta e Persistência de Telemetria
+```text
+[INICIANDO COLETA] Interrogando telemetria dos sensores da UBS...
 
-Text
-
-```
->>> [COLETA] Interrogando sensores do territorio...
-[SUCESSO] 3 medicoes coletadas e gravadas no banco de dados:
-   * [1] Sensor: FILA_ESPERA        | Leitura: 42.00  | Registrado em: 2026-11-15T14:20:10
-   * [2] Sensor: TEMPO_ATENDIMENTO  | Leitura: 31.40  | Registrado em: 2026-11-15T14:20:10
-   * [3] Sensor: OCUPACAO_SALAS     | Leitura: 78.50  | Registrado em: 2026-11-15T14:20:10
-```
-
-#### Análise Preditiva e Emissão de Alerta Automático
-
-Text
-
-```
-[PROCESSANDO] Executando estrategia: Media Movel Simples
-[RESULTADO DA PREVISAO] 58.00 (FILA_ESPERA)
-
-[ALERTA DE SEGURANCA] UM LIMIAR FOI VIOLADO:
-   [ALERTA CRITICO] Sensor: FILA_ESPERA | Previsto: 58.00 | Limite: 55.00 | Motivo: Fila projetada em 58 pessoas (Limite Critico: 55). Risco iminente de tumulto e desassistencia.
+--------------------------------------------------------------------
+| SUCESSO: Leituras registradas e salvas no banco de dados:        |
+--------------------------------------------------------------------
+  * [FILA_ESPERA       ] Valor Coletado: 48.00  | Gravado em: 16:11:47
+  * [TEMPO_ATENDIMENTO ] Valor Coletado: 33.19  | Gravado em: 16:11:47
+  * [OCUPACAO_SALAS    ] Valor Coletado: 46.44  | Gravado em: 16:11:47
+--------------------------------------------------------------------
 ```
 
----
+
 
 ### Divisão de Tarefas
 
