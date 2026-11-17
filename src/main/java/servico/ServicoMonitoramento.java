@@ -1,14 +1,19 @@
 package servico;
 
-import dominio.*;
-import excecao.DadosInvalidosException;
-import persistencia.AlertaRepository;
-import persistencia.MedicaoRepository;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
+import dominio.Alerta;
+import dominio.EstrategiaPrevisao;
+import dominio.Medicao;
+import dominio.NivelAlerta;
+import dominio.Sensor;
+import excecao.DadosInvalidosException;
+import persistencia.AlertaRepository;
+import persistencia.MedicaoRepository;
 
 // Serviço orquestrador que coordena a leitura de sensores, gravação do histórico, execução das previsões polimórficas e emissão de alertas.
 @Service
@@ -74,7 +79,7 @@ public class ServicoMonitoramento {
 
         if (historico.size() < config.getLeiturasMinimasParaPrevisao()) {
             throw new DadosInvalidosException(String.format(
-                    "O sistema deve se calar: são necessárias no mínimo %d leituras para o sensor '%s', mas há apenas %d no banco.",
+                    "São necessárias no mínimo %d leituras para o sensor '%s', mas há apenas %d no banco.",
                     config.getLeiturasMinimasParaPrevisao(), tipoSensor, historico.size()
             ));
         }
