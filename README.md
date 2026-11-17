@@ -207,7 +207,7 @@ territory-predictive-insights/
 ### Divisão de Tarefas
 
 * **Manoela Oliveira | RM563952:** Arquitetura geral orientada a objetos, implementação da camada de serviços (ServicoMonitoramento), regras de persistência com Spring Data JPA, tratamento de exceções customizadas, padrões criacionais (Singleton e Factory), Modelagem e implementação das entidades de domínio territorial e das classes de telemetria (interfaces e implementações dos sensores) e elaboração da suíte de testes unitários com Mockito.
-* **Felipe Rodrigues | RM565274** Configuração do arquivo de propriedades do banco de dados (application.properties), testes manuais do fluxo do menu de console e auxílio na documentação técnica.
+* **Felipe Rodrigues | RM565274:** Configuração do arquivo de propriedades do banco de dados (application.properties), testes manuais do fluxo do menu de console e auxílio na documentação técnica.
 
 ### Uso de Inteligência Artificial
 
