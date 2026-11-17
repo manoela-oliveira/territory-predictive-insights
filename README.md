@@ -33,21 +33,43 @@ Este projeto foi desenvolvido no âmbito da iniciativa **CitizenTech: Territory 
 
 #### 2. Passo a Passo para Execução
 
-1. Clone o repositório em seu ambiente local:
+1. **Clone o repositório em seu ambiente local:**
 
    ```bash
    git clone https://github.com/SEU-USUARIO/territory-predictive-insights.git
    ```
 
-2. Abra a pasta raiz do projeto no VS Code (File > Open Folder...).
+2. **Abra a pasta raiz do projeto no VS Code (File > Open Folder...).**
 
-3. Aguarde o VS Code carregar as dependências do Maven (o indicador de sincronização aparecerá na barra inferior).
+3. **Aguarde o VS Code carregar as dependências do Maven (o indicador de sincronização aparecerá na barra inferior).**
 
 4. **Para rodar a aplicação (Menu de Console):**
 
-   - Navegue até o arquivo src/main/java/SistemaMonitoramento.java.
-   - Clique na opção **Run** que surge diretamente acima do método public static void main(String[] args).
+   - Navegue até o arquivo `src/main/java/SistemaMonitoramento.java`.
+   - Clique na opção **Run** que surge diretamente acima do método `public static void main(String[] args)`.
    - Interaja com o sistema através do terminal integrado.
+
+   Exemplos de utilização:
+
+   - Alimentar o banco com leituras:
+
+     Digite `1` e pressione `Enter` para coletar dados dos sensores (repita o comando `1` pelo menos 3 vezes para criar histórico suficiente para a previsão).
+
+   - Executar a previsão preditiva:
+
+     Digite `2` e pressione `Enter`. Quando o sistema solicitar a métrica, digite `1` (Fila de Espera) e dê `Enter`. Em seguida, escolha a estratégia digitando `A` (Média Móvel) e dê `Enter`. O sistema exibirá o valor projetado e avaliará se houve violação de limiar.
+
+   - Auditar os alertas emitidos:
+
+     Digite `4` e pressione `Enter` para listar os alertas que foram gerados e salvos no banco de dados.
+
+   - Consultar o histórico bruto:
+
+     Digite `3` e pressione `Enter`. Quando o console pedir o sensor, digite `FILA_ESPERA` e pressione `Enter` para visualizar todos os registros cronológicos.
+
+   - Encerrar a aplicação:
+
+     Digite `0` e pressione `Enter`.
 
 5. **Para rodar a suíte de testes unitários:**
 
@@ -142,13 +164,13 @@ territory-predictive-insights/
 * **Singleton (ConfiguracaoSistema):** Garante uma instância única global em memória para guardar os limiares operacionais da unidade (capacidade, tempos e tolerâncias). Possui construtor estritamente privado e controle de concorrência (synchronized) no ponto de acesso getInstancia(), impedindo estados divergentes de tolerância na aplicação.
 * **Factory (FabricaPrevisao):** Centraliza a criação das estratégias preditivas (PrevisaoMediaMovel e PrevisaoComparacao). O código cliente apenas solicita a estratégia desejada por identificador textual, eliminando estruturas condicionais (if/else ou switch) espalhadas pela camada de serviço ou interface.
 
-### 3. Reflexão Crítica (Obrigatória da GS)
+### 3. Reflexão Crítica
 
-* **Quando o sistema deve se calar?**
+* **Quando o sistema deve se calar?** <p>
   O sistema preditivo não deve emitir projeções ou alertas quando não houver densidade histórica suficiente. No ServicoMonitoramento, o algoritmo exige um mínimo de leituras armazenadas no banco de dados para liberar a previsão; caso a amostragem seja inferior a esse limiar, o sistema se cala e lança DadosInvalidosException. Prever com base em 1 ou 2 leituras pontuais constitui ruído estatístico e induz a equipe a erros operacionais graves (pânico desnecessário ou falsa sensação de segurança).
-* **O que os dados não representam?**
+* **O que os dados não representam?** <p>
   A telemetria (sensores de catraca, tempo de prontuário e ocupação de leitos) captura o sintoma quantitativo, mas ignora completamente a complexidade qualitativa da comunidade. Os dados numéricos não revelam se o aumento de demanda decorre de um surto epidemiológico local (como dengue), da interrupção de atendimento em um bairro vizinho, de desabastecimento de remédios ou de condições climáticas adversas. Um sensor mede a quantidade de pessoas na sala, mas não expressa a gravidade clínica individual dos casos presentes.
-* **Por que o alerta apoia a decisão da pessoa, em vez de decidir por ela?**
+* **Por que o alerta apoia a decisão da pessoa, em vez de decidir por ela?** <p>
   A tecnologia deve atuar como ferramenta de ampliação da consciência situacional, nunca como autoridade decisória final em serviços essenciais de saúde. A responsabilidade clínica e de acolhimento pertence aos profissionais humanos. Um alerta automatizado informa que a taxa de ocupação ou fila está projetada para estourar a capacidade em curto prazo, permitindo que o gestor da UBS tome medidas humanas cabíveis (ex.: solicitar reforço ao município, estender plantões ou acionar leitos de retaguarda). A decisão humana pondera empatia, gravidade e contexto social, fatores que nenhum algoritmo puramente matemático consegue absorver.
 
 ---
@@ -206,7 +228,7 @@ Text
 ### Divisão de Tarefas
 
 * **Manoela Oliveira | RM563952:** Arquitetura geral orientada a objetos, implementação da camada de serviços (ServicoMonitoramento), regras de persistência com Spring Data JPA, tratamento de exceções customizadas, padrões criacionais (Singleton e Factory), Modelagem e implementação das entidades de domínio territorial e das classes de telemetria (interfaces e implementações dos sensores) e elaboração da suíte de testes unitários com Mockito.
-* **Felipe Rodrigues | RM565274)** Configuração do arquivo de propriedades do banco de dados (application.properties), testes manuais do fluxo do menu de console e auxílio na documentação técnica.
+* **Felipe Rodrigues | RM565274** Configuração do arquivo de propriedades do banco de dados (application.properties), testes manuais do fluxo do menu de console e auxílio na documentação técnica.
 
 ### Uso de Inteligência Artificial
 
